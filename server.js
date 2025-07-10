@@ -16,13 +16,7 @@ function parseEnvList(env) {
   return env.split(',');
 }
 
-// security added by shiva (for shivanand-0 use only)
-const corsOptions = {
-  origin: "https://shivanand-0.github.io", // only allow your site
-};
 
-app.use(cors(corsOptions));
-// 
 // Set up rate-limiting to avoid abuse of the public CORS Anywhere server.
 var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELIMIT);
 
